@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CODESTORM 2026 | RIT Hassan</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fc;
+    color: #20243a;
+    line-height: 1.6;
+}
+
+header {
+    background: #10152b;
+    color: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.brand span {
+    color: #a995ff;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #b6a5ff;
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 70px 8%;
+    background:
+    radial-gradient(circle at 80% 20%, #5545a8, transparent 35%),
+    linear-gradient(135deg, #10152b, #243c91 65%, #4939a0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logos {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    background: white;
+    padding: 9px;
+    border-radius: 15px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero small {
+    color: #c7bdff;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #b8a5ff;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #e2e5ff;
+    font-size: 17px;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 27px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.primary {
+    background: #8064f5;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 75px 8%;
+    scroll-margin-top: 75px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #202c68;
+}
+
+.section-title p {
+    color: #73788c;
+    margin-top: 8px;
+}
+
+.about {
+    background: white;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.stat {
+    background: #f0edff;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.stat h3 {
+    font-size: 25px;
+    color: #6245d7;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 13px;
+    padding: 28px;
+    box-shadow: 0 5px 20px #18204412;
+    transition: 0.3s;
+    border: 1px solid #eeeef7;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card .emoji {
+    font-size: 38px;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    color: #293b85;
+}
+
+.card p {
+    color: #666d81;
+}
+
+.challenge {
+    background: linear-gradient(135deg, #151b3b, #293e8d);
+    color: white;
+}
+
+.challenge .section-title h2 {
+    color: white;
+}
+
+.challenge .section-title p {
+    color: #d2d7f6;
+}
+
+.challenge-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    background: #ffffff12;
+    border: 1px solid #ffffff30;
+    border-radius: 15px;
+}
+
+.challenge-box h3 {
+    color: #c0afff;
+    margin-bottom: 15px;
+}
+
+.challenge-box ul {
+    padding-left: 22px;
+}
+
+.challenge-box li {
+    margin: 12px 0;
+}
+
+/* REGISTRATION AND FEEDBACK */
+
+.registration-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #00000012;
+}
+
+.registration-form label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: bold;
+    color: #293b85;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea,
+#gallerySearch {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.registration-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.registration-form button {
+    margin-top: 20px;
+}
+
+.message {
+    margin-top: 15px;
+    color: #168343;
+    font-weight: bold;
+}
+
+/* GALLERY */
+
+.gallery {
+    background: white;
+}
+
+#gallerySearch {
+    max-width: 600px;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.upload-area {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 25px;
+    background: #f0edff;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.upload-area input {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    background: #eeeaff;
+    border-radius: 12px;
+    color: #293b85;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 12px;
+    font-weight: bold;
+}
+
+.image-preview {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000000e8;
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-preview img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.close-preview {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* RULES */
+
+.rules {
+    background: #f0f1fa;
+}
+
+.rules-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+details {
+    background: white;
+    margin-bottom: 13px;
+    border-radius: 9px;
+    padding: 18px 22px;
+}
+
+summary {
+    font-weight: bold;
+    color: #293b85;
+    cursor: pointer;
+}
+
+details p {
+    margin-top: 12px;
+    color: #656b7b;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #151a32;
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title h2 {
+    color: white;
+}
+
+.contact .section-title p {
+    color: #d3d6e8;
+}
+
+.contact p {
+    margin: 12px 0;
+    color: #d3d6e8;
+}
+
+.contact a {
+    color: #b9a6ff;
+    text-decoration: none;
+}
+
+footer {
+    background: #0c1022;
+    color: #b8bed2;
+    padding: 22px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 50%;
+    background: #7355e8;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 90;
+}
+
+@media(max-width: 850px) {
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        background: #10152b;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .cards,
+    .stats,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        width: 72px;
+        height: 72px;
+    }
+
+    .registration-form {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="brand">CODE<span>STORM</span> 2026</div>
+
+    <button class="menu" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#challenges" onclick="closeMenu()">Challenge</a>
+        <a href="#features" onclick="closeMenu()">Features</a>
+        <a href="#registration" onclick="closeMenu()">Register</a>
+        <a href="#gallery" onclick="closeMenu()">Gallery</a>
+        <a href="#rules" onclick="closeMenu()">Rules</a>
+        <a href="#feedback" onclick="closeMenu()">Feedback</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+    <div class="logos">
+
+        <div class="logo">
+            <img src="c:\Users\Kr Veena\Desktop\codestorm\rit-logo.png">
+        </div>
+
+        <div class="logo">
+            <img src="c:\Users\Kr Veena\Desktop\codestorm\cse-logo.png">
+        </div>
+
+        <div class="logo">
+            <img src="c:\Users\Kr Veena\Desktop\codestorm\gdg-logo.png">
+        </div>
+
+    </div>
+
+    <small>GDG ON CAMPUS • RIT HASSAN</small>
+
+    <h1>CODE<span>STORM</span> 2026</h1>
+
+    <p>
+        November Edition – A platform to transform
+        creative ideas into meaningful digital solutions
+        through technology, innovation and teamwork.
+    </p>
+
+    <div class="buttons">
+        <a href="#challenges" class="btn primary">Explore Challenge</a>
+        <a href="#registration" class="btn secondary">Register Now</a>
+    </div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+        <h2>About CODESTORM</h2>
+        <p>Innovation begins with an idea.</p>
+    </div>
+
+    <div class="about-content">
+
+        <p>
+            CODESTORM 2026 – November Edition is an initiative
+            organized by Google Developer Groups on Campus at
+            Rajeev Institute of Technology, Hassan.
+
+            It provides a platform for students to explore
+            technology, develop creative solutions and
+            demonstrate their technical knowledge.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>2026</h3>
+                <p>November Edition</p>
+            </div>
+
+            <div class="stat">
+                <h3>GDG</h3>
+                <p>On Campus</p>
+            </div>
+
+            <div class="stat">
+                <h3>RIT</h3>
+                <p>Hassan</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CHALLENGE -->
+
+<section class="challenge" id="challenges">
+
+    <div class="section-title">
+        <h2>Website Building Challenge</h2>
+        <p>Challenge 01 – CODESTORM 2026</p>
+    </div>
+
+    <div class="challenge-box">
+
+        <h3>Build. Create. Innovate.</h3>
+
+        <p>
+            Develop a website based on a meaningful idea
+            or real-world purpose. Demonstrate creativity,
+            technical skills and user-friendly design.
+        </p>
+
+        <br>
+
+        <h3>Mandatory Requirements</h3>
+
+        <ul>
+            <li>Include all three official logos.</li>
+            <li>Include all required website sections.</li>
+            <li>Implement at least three meaningful features.</li>
+            <li>Make the website responsive.</li>
+            <li>Maintain a public GitHub repository.</li>
+            <li>Deploy the website and provide a live URL.</li>
+            <li>Ensure the project is functional and accessible.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features">
+
+    <div class="section-title">
+        <h2>Website Features</h2>
+        <p>Useful features for a better user experience.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="emoji">📱</div>
+            <h3>Responsive Design</h3>
+            <p>Works across mobile phones, tablets and desktops.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">📝</div>
+            <h3>Registration</h3>
+            <p>Collect participant information through a registration form.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔍</div>
+            <h3>Gallery Search</h3>
+            <p>Find event photographs by searching their titles.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🖼️</div>
+            <h3>Photo Upload</h3>
+            <p>Select and display event photographs in the gallery.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">⭐</div>
+            <h3>Feedback System</h3>
+            <p>Collect visitor ratings and comments.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">📋</div>
+            <h3>Rules Section</h3>
+            <p>Expandable event guidelines and regulations.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- REGISTRATION -->
+
+<section id="registration">
+
+    <div class="section-title">
+        <h2>Participant Registration</h2>
+        <p>Enter your details to register your interest.</p>
+    </div>
+
+    <form id="registrationForm" class="registration-form">
+
+        <label>Full Name</label>
+        <input type="text" id="name"
+        placeholder="Enter your name" required>
+
+        <label>USN</label>
+        <input type="text" id="usn"
+        placeholder="Enter your USN" required>
+
+        <label>Department</label>
+        <select id="department" required>
+            <option value="">Select Department</option>
+            <option>CSE</option>
+            <option>ISE</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+        </select>
+
+        <label>Email Address</label>
+        <input type="email" id="email"
+        placeholder="Enter your email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" id="phone"
+        placeholder="Enter 10 digit number"
+        pattern="[0-9]{10}" maxlength="10" required>
+
+        <button type="submit" class="btn primary">
+            Submit Registration
+        </button>
+
+        <p id="registrationMessage" class="message"></p>
+
+    </form>
+
+</section>
+
+<!-- EVENT GALLERY -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-title">
+        <h2>Event Gallery</h2>
+        <p>Explore the moments of CODESTORM 2026.</p>
+    </div>
+
+    <input type="text" id="gallerySearch"
+    placeholder="Search gallery..."
+    oninput="searchGallery()">
+
+    <div class="upload-area">
+
+        <h3>Upload Event Photograph</h3>
+
+        <input type="file" id="photoUpload" accept="image/*">
+
+        <button onclick="uploadPhoto()" class="btn primary">
+            Upload Photo
+        </button>
+
+        <p id="uploadMessage"></p>
+
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-item" data-title="Technology">
+            <img src="c:\Users\Kr Veena\Pictures\img1.webp" alt="Technology event">
+            <p>Technology</p>
+        </div>
+
+        <div class="gallery-item" data-title="Innovation">
+            <img src="https://th.bing.com/th/id/OIP.2g3TcmJRAjur4Ji6c7CgLgHaHa?w=173&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Innovation event">
+            <p>Innovation</p>
+        </div>
+
+        <div class="gallery-item" data-title="Teamwork">
+            <img src="https://th.bing.com/th/id/OIP.1AgW1qUlDmx9WEPWU6_QWAHaEC?w=304&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Teamwork event">
+            <p>Teamwork</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- IMAGE PREVIEW -->
+
+<div class="image-preview" id="imagePreview"
+onclick="closePreview()">
+
+    <button class="close-preview"
+    onclick="closePreview()">×</button>
+
+    <img id="previewImage" alt="Selected gallery image">
+
+</div>
+
+<!-- RULES -->
+
+<section class="rules" id="rules">
+
+    <div class="section-title">
+        <h2>Rules & Regulations</h2>
+        <p>Important guidelines for participants.</p>
+    </div>
+
+    <div class="rules-list">
+
+        <details>
+            <summary>1. Participation Rules</summary>
+            <p>
+                Participants must complete registration,
+                provide accurate information and follow
+                the official instructions.
+            </p>
+        </details>
+
+        <details>
+            <summary>2. Project Development Rules</summary>
+            <p>
+                Develop a meaningful website, include all
+                three official logos, required sections and
+                at least three meaningful features.
+            </p>
+        </details>
+
+        <details>
+            <summary>3. Originality and Integrity</summary>
+            <p>
+                Submit original work. Open-source libraries
+                and templates are permitted with appropriate
+                customization and credit.
+            </p>
+        </details>
+
+        <details>
+            <summary>4. AI Tool Usage</summary>
+            <p>
+                AI tools may be used for learning,
+                brainstorming, debugging and development.
+                Participants must understand and test their code.
+            </p>
+        </details>
+
+        <details>
+            <summary>5. Design and Content Rules</summary>
+            <p>
+                Websites should have professional content,
+                responsible use of images and a safe,
+                user-friendly experience.
+            </p>
+        </details>
+
+        <details>
+            <summary>6. Submission Rules</summary>
+            <p>
+                Submit a public GitHub repository URL and
+                a live deployed website URL through the
+                official submission method.
+            </p>
+        </details>
+
+        <details>
+            <summary>7. Evaluation Criteria</summary>
+            <p>
+                Evaluation considers design, functionality,
+                creativity, responsiveness, technical
+                implementation and presentation.
+            </p>
+        </details>
+
+        <details>
+            <summary>8. Code of Conduct</summary>
+            <p>
+                Maintain respectful communication and
+                follow the event instructions.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+<!-- FEEDBACK -->
+
+<section id="feedback">
+
+    <div class="section-title">
+        <h2>Share Your Feedback</h2>
+        <p>Tell us about your experience.</p>
+    </div>
+
+    <form id="feedbackForm" class="registration-form">
+
+        <label>Your Name</label>
+        <input type="text" id="feedbackName"
+        placeholder="Enter your name" required>
+
+        <label>Your Feedback</label>
+        <textarea id="feedbackText"
+        placeholder="Write your feedback..."
+        required></textarea>
+
+        <label>Rating</label>
+
+        <select id="rating" required>
+            <option value="">Select Rating</option>
+            <option>Excellent</option>
+            <option>Very Good</option>
+            <option>Good</option>
+            <option>Average</option>
+        </select>
+
+        <button class="btn primary" type="submit">
+            Submit Feedback
+        </button>
+
+        <p id="feedbackMessage" class="message"></p>
+
+    </form>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Contact & Connect</h2>
+        <p>Connect with the official organizers.</p>
+    </div>
+
+    <p><strong>Organizer:</strong> GDG on Campus – RIT Hassan</p>
+
+    <p>
+        <strong>College:</strong>
+        Rajeev Institute of Technology, Hassan
+    </p>
+
+    <p><strong>Student Coordinator:</strong> Yashawantha H M</p>
+
+    <p>
+        <strong>Official Website:</strong>
+        <a href="https://gdg-rit-website.vercel.app/"
+        target="_blank" rel="noopener">
+        Visit GDG Website</a>
+    </p>
+
+    <p>
+        <strong>Instagram:</strong>
+        <a href="https://www.instagram.com/gdg_club_rit/"
+        target="_blank" rel="noopener">
+        Follow GDG RIT</a>
+    </p>
+
+    <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/Yashawantha26/codestorm-2026"
+        target="_blank" rel="noopener">
+        CODESTORM Repository</a>
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>© 2026 CODESTORM | GDG on Campus – RIT Hassan</p>
+
+    <p>
+        Build with creativity.
+        Compete with integrity.
+        Innovate with purpose.
+    </p>
+
+</footer>
+
+<button class="top" id="topButton"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+<script>
+
+// MOBILE NAVIGATION
+
+function toggleMenu() {
+    document.getElementById("navigation")
+    .classList.toggle("show");
+}
+
+function closeMenu() {
+    document.getElementById("navigation")
+    .classList.remove("show");
+}
+
+
+// BACK TO TOP BUTTON
+
+const topButton = document.getElementById("topButton");
+
+window.addEventListener("scroll", function() {
+
+    topButton.style.display =
+    window.scrollY > 300 ? "block" : "none";
+
+});
+
+
+// REGISTRATION FORM
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const participant = {
+
+        name: document.getElementById("name").value.trim(),
+
+        usn: document.getElementById("usn").value.trim(),
+
+        department: document.getElementById("department").value,
+
+        email: document.getElementById("email").value.trim(),
+
+        phone: document.getElementById("phone").value.trim()
+
+    };
+
+    if (!/^[0-9]{10}$/.test(participant.phone)) {
+        alert("Enter a valid 10 digit phone number.");
+        return;
+    }
+
+    if (!participant.name || !participant.usn) {
+        alert("Please complete all required fields.");
+        return;
+    }
+
+    try {
+
+        let registrations = JSON.parse(
+            localStorage.getItem("registrations") || "[]"
+        );
+
+        registrations.push(participant);
+
+        localStorage.setItem(
+            "registrations",
+            JSON.stringify(registrations)
+        );
+
+        document.getElementById("registrationMessage")
+        .textContent = "Registration submitted successfully!";
+
+        this.reset();
+
+    } catch(error) {
+
+        alert("Unable to save registration in this browser.");
+
+    }
+
+});
+
+
+// GALLERY SEARCH
+
+function searchGallery() {
+
+    let search = document.getElementById("gallerySearch")
+    .value.toLowerCase();
+
+    let items = document.querySelectorAll(".gallery-item");
+
+    items.forEach(function(item) {
+
+        let title = item.dataset.title.toLowerCase();
+
+        item.style.display =
+        title.includes(search) ? "block" : "none";
+
+    });
+
+}
+
+
+// IMAGE UPLOAD
+
+function uploadPhoto() {
+
+    const file = document.getElementById("photoUpload").files[0];
+
+    const message = document.getElementById("uploadMessage");
+
+    if (!file) {
+        alert("Please select an image first!");
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+        alert("Please select a valid image.");
+        return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+        alert("Please select an image smaller than 5 MB.");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        const item = document.createElement("div");
+
+        item.className = "gallery-item";
+
+        item.dataset.title = file.name.toLowerCase();
+
+        const img = document.createElement("img");
+
+        img.src = e.target.result;
+
+        img.alt = file.name;
+
+        const caption = document.createElement("p");
+
+        caption.textContent = file.name;
+
+        item.appendChild(img);
+
+        item.appendChild(caption);
+
+        document.getElementById("galleryGrid")
+        .appendChild(item);
+
+        document.getElementById("photoUpload").value = "";
+
+        message.textContent = "Photo added to gallery!";
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+
+
+// IMAGE PREVIEW
+
+document.getElementById("galleryGrid")
+.addEventListener("click", function(e) {
+
+    const img = e.target.closest("img");
+
+    if (!img) return;
+
+    document.getElementById("previewImage").src = img.src;
+
+    document.getElementById("imagePreview")
+    .style.display = "flex";
+
+});
+
+function closePreview() {
+
+    document.getElementById("imagePreview")
+    .style.display = "none";
+
+}
+
+
+// FEEDBACK FORM
+
+document.getElementById("feedbackForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const feedback = {
+
+        name: document.getElementById("feedbackName").value.trim(),
+
+        message: document.getElementById("feedbackText").value.trim(),
+
+        rating: document.getElementById("rating").value
+
+    };
+
+    try {
+
+        let feedbackList = JSON.parse(
+            localStorage.getItem("feedbackList") || "[]"
+        );
+
+        feedbackList.push(feedback);
+
+        localStorage.setItem(
+            "feedbackList",
+            JSON.stringify(feedbackList)
+        );
+
+        document.getElementById("feedbackMessage")
+        .textContent = "Thank you for your feedback!";
+
+        this.reset();
+
+    } catch(error) {
+
+        alert("Unable to save feedback in this browser.");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
